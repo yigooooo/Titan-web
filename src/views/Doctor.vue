@@ -62,7 +62,7 @@
             </el-icon>
             <span style="vertical-align: middle"> 删除 </span>
           </el-button>
-          
+
         </template>
       </el-table-column>
     </el-table>
@@ -168,6 +168,7 @@
         <el-button @click="infoVisible = false">取 消</el-button>
       </span>
     </el-dialog>
+    <el-divider border-style="double" />
   </div>
 </template>
 
@@ -176,11 +177,11 @@ import {ElNotification} from 'element-plus'
 import { reactive, ref, onMounted} from "vue"
 import { ElLoading } from 'element-plus'
 import useDoctor from '@/hooks/useDoctor'
-import type { 
-  searchDoctor, 
-  pageDoctor, 
-  doctor, 
-  deleteDoctor, 
+import type {
+  searchDoctor,
+  pageDoctor,
+  doctor,
+  deleteDoctor,
   insertDoctor,
   editDoctor,
   infoDoctor

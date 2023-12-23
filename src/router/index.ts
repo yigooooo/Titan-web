@@ -24,12 +24,26 @@ const router = createRouter({
           name:'doctor',
           component:()=> import('@/views/Doctor.vue')
         },
-          
         {
           path:'nurse',
           name:'nurse',
           component:()=> import('@/views/Nurse.vue')
-        }
+        },
+        {
+          path:'department',
+          name:'department',
+          component:()=> import('@/views/Department.vue')
+        },
+        {
+          path:'ward',
+          name:'ward',
+          component:()=> import('@/views/Ward.vue')
+        },
+        {
+          path:'bed',
+          name:'bed',
+          component:()=> import('@/views/Bed.vue')
+        },
       ]
     },
   ]

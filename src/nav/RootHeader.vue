@@ -21,13 +21,13 @@
 
                         <el-sub-menu index="3">
                         <template #title>设施管理</template>
-                        <el-menu-item index="3-1">科室管理</el-menu-item>
-                        <el-menu-item index="3-2">病房管理</el-menu-item>
-                        <el-menu-item index="3-2">床位管理</el-menu-item>
+                        <el-menu-item index="department">科室管理</el-menu-item>
+                        <el-menu-item index="ward">病房管理</el-menu-item>
+                        <el-menu-item index="bed">床位管理</el-menu-item>
                         </el-sub-menu>
                     </el-row>
                 </div>
-                
+
                 <el-sub-menu index="4">
                         <template #title>个人中心</template>
                         <div style="margin-left: 15px;margin-bottom: 5px;">
@@ -39,7 +39,7 @@
             </el-menu>
         </div>
     </div>
-    
+
 </template>
 
 <script setup lang="ts" name="RootHeader">

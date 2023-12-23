@@ -62,7 +62,7 @@
             </el-icon>
             <span style="vertical-align: middle"> 删除 </span>
           </el-button>
-          
+
         </template>
       </el-table-column>
     </el-table>
@@ -84,6 +84,8 @@
         @current-change="handleCurrentChange"
       />
     </div>
+
+    <el-divider border-style="double" />
 
     <!--    新增角色對話框-->
     <el-dialog
@@ -179,7 +181,7 @@ import { ElLoading } from 'element-plus'
 import useNurse from '@/hooks/useNurse'
 import useDoctor from '@/hooks/useDoctor'
 import type {
-    pageDoctor, 
+    pageDoctor,
     searchNurse,
     Nurse,
     nurseInseret,
@@ -229,7 +231,7 @@ onMounted(()=>{
     loading.close();
 })
 })
-  
+
 //分页条件查询begin
 let form:searchNurse = reactive({
   page:1,
