@@ -33,7 +33,7 @@
                         <div style="margin-left: 15px;margin-bottom: 5px;">
                           <el-avatar> user </el-avatar>
                         </div>
-                        <el-menu-item index="4-1">个人中心</el-menu-item>
+                        <el-menu-item index="rootInfo">个人中心</el-menu-item>
                         <el-menu-item index="login" @click="loginOut">退出登录</el-menu-item>
                         </el-sub-menu>
             </el-menu>

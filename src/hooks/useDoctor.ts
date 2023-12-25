@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 import type {searchDoctor, pageDoctor, deleteDoctor, insertDoctor, editDoctor} from '../types'
 export default function() {
-    
+
     //初始化doctor表数据
     async function init(data: pageDoctor) {
         return request({
@@ -64,5 +64,22 @@ export default function() {
         })
     }
 
-    return{getPage, init, removeDoctor, addDoctor, getDepartments, updateDoctor, getCount}
+    //查詢男女醫生比例
+    async function sexRatio(){
+        return request({
+            url:'http://localhost:9000/api/doctorInfo/sexRatio',
+            method:'GET'
+        })
+    }
+
+    //修改或新增医生账户与密码
+    async function resetCount(data) {
+        return request({
+            url:'http://localhost:9000/api/doctor/reset',
+            method:'POST',
+            data:data
+        })
+    }
+
+    return{getPage, init, removeDoctor, addDoctor, getDepartments, updateDoctor, getCount, sexRatio}
 }

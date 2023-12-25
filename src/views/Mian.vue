@@ -19,13 +19,15 @@
 
         <el-col :span="5">
           <div>
-            <el-statistic title="医生男女比例">
-              <template slot="formatter">
-                {{sexRatio}}
-              </template>
-            </el-statistic>
+            <el-statistic
+                group-separator=","
+                :precision="0"
+                :value="ratio"
+                title="男女医生比例"
+            ></el-statistic>
           </div>
         </el-col>
+
 
         <el-col :span="5">
           <div>
@@ -66,10 +68,43 @@
 </template>
 
 <script name="Main" setup lang="ts">
+import { reactive, ref, onMounted} from "vue"
+import useDoctor from '@/hooks/useDoctor'
+import useDepartment from "@/hooks/useDepartment";
+import useNurse from "@/hooks/useNurse";
+import useWard from "@/hooks/useWard";
+import type {} from '@/types'
 
+const {getCount, sexRatio} = useDoctor();
+const {counts} = useDepartment();
+const {getNurseCount} = useNurse();
+const {wardCount} = useWard();
+
+
+let doctorCount = ref();
+let ratio = ref();
+let departmentCount = ref();
+let nurseCount = ref();
+let count = ref();
+
+onMounted(()=>{
+  getCount().then(res=>{
+    doctorCount.value = res.body;
+  });
+  sexRatio().then(res=>{
+    ratio.value = res.body;
+  });
+  counts().then(res=>{
+    departmentCount.value = res.body;
+  });
+  getNurseCount().then(res=>{
+    nurseCount.value = res.body;
+  });
+  wardCount().then(res=>{
+    count.value = res.body;
+  })
+})
 </script>
-
-
 
 <style>
 #main{

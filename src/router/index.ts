@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import * as path from "path";
 
 
 const router = createRouter({
@@ -44,6 +45,18 @@ const router = createRouter({
           name:'bed',
           component:()=> import('@/views/Bed.vue')
         },
+        {
+          path:'rootWorkSpace',
+          name:'rootWorkSpace',
+          component:()=> import('@/views/WorkSpace.vue'),
+          children:[
+            {
+              path: 'rootInfo',
+              name: 'rootInfo',
+              component: () => import('@/views/components/root/RootInfo.vue')
+            }
+          ]
+        }
       ]
     },
   ]

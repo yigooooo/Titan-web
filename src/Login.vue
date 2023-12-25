@@ -72,7 +72,7 @@ function loginAdmin() {
   const loading = ElLoading.service();
   if (radio.value == '0') {
     login(loginUser).then(res=>{
-      if (res.resultCode == '200' && res.body != null){
+      if (res.resultCode == '200' && res.body != null && res.body != false){
             localStorage.setItem("token", res.body);
             router.replace({
               name:'RootIndex',
@@ -80,10 +80,14 @@ function loginAdmin() {
             loading.close();
             return;
           }
+      ElNotification({
+        title:'失败',
+        message:'登录失败,账户或密码错误',
+        type:"error"
+      })
         })
   }
-
-
+  loading.close();
 }
 
 //注册角色
