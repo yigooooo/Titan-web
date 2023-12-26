@@ -81,5 +81,14 @@ export default function() {
         })
     }
 
-    return{getPage, init, removeDoctor, addDoctor, getDepartments, updateDoctor, getCount, sexRatio}
+    //根据id查询医生详情
+    async function info(data) {
+        return request({
+            url:'http://localhost:9000/api/doctorInfo/info',
+            method:'POST',
+            data:data
+        })
+    }
+
+    return{getPage, init, removeDoctor, addDoctor, getDepartments, updateDoctor, getCount, sexRatio, info, resetCount}
 }

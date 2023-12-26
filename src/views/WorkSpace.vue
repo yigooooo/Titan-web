@@ -22,7 +22,7 @@
                     <template #title>新增管理员账号</template>
                   </el-menu-item>
 
-                  <el-menu-item index="3">
+                  <el-menu-item index="/RootIndex/rootWorkSpace/resetPassword">
                     <el-icon><document /></el-icon>
                     <template #title>密码重置</template>
                   </el-menu-item>

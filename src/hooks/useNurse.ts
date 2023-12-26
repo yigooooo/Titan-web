@@ -49,13 +49,22 @@ export default function() {
 
     //邏輯刪除护士
     async function removeNurse(data: deleteNurse){
-    return request({
-        url:'http://localhost:9000/api/nurse/delete',
-        method:'Get',
-        params:data
-    })
-}
+        return request({
+            url:'http://localhost:9000/api/nurse/delete',
+            method:'Get',
+            params:data
+        })
+    }
+
+    //獲取护士詳情
+    async function nurseInfo(data){
+        return request({
+            url:'http://localhost:9000/api/nurse/info',
+            method:'POST',
+            data:data
+        })
+    }
 
 
-    return {getPage, init, getNurseCount, addNurse, updateNurse, removeNurse};
+    return {getPage, init, getNurseCount, addNurse, updateNurse, removeNurse, nurseInfo};
 }
